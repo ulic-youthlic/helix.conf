@@ -1,0 +1,60 @@
+theme = "ayu_evolve"
+
+[editor]
+line-number = "relative"
+shell = ["pwsh", "-cwa"]
+cursorline = true
+gutters = ["diagnostics", "line-numbers", "spacer"]
+cursorcolumn = false
+bufferline = "multiple"
+color-modes = true
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = [
+  "mode",
+  "file-name",
+  "file-encoding",
+  "file-type",
+  "separator",
+  "spinner",
+]
+center = ["diagnostics"]
+right = [
+  "file-line-ending",
+  "separator",
+  "selections",
+  "total-line-numbers",
+  "position",
+  "position-percentage",
+]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+newline = "⏎"
+tabpad = "·"
+
+[editor.indent-guides]
+render = true
