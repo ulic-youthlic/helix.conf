@@ -1,4 +1,14 @@
 [[language]]
+name = "cpp"
+auto-format = true
+formatter = { command = "clang-format" }
+
+[[language]]
+name = "c"
+auto-format = true
+formatter = { command = "clang-format" }
+
+[[language]]
 name = "vue"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "vue"] }
