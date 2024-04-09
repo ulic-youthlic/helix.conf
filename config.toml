@@ -8,6 +8,7 @@ gutters = ["diagnostics", "line-numbers", "spacer"]
 cursorcolumn = false
 bufferline = "multiple"
 color-modes = true
+soft-wrap.enable = true
 
 [editor.lsp]
 display-inlay-hints = true
