@@ -29,6 +29,7 @@ left = [
   "file-type",
   "separator",
   "spinner",
+  "version-control",
 ]
 center = ["diagnostics"]
 right = [
