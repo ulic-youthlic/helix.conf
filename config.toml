@@ -27,8 +27,8 @@ left = [
   "mode",
   "file-name",
   "file-encoding",
-  "file-type",
   "separator",
+  "file-type",
   "spinner",
   "version-control",
 ]
