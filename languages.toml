@@ -243,7 +243,7 @@ json = { keepLines = { enable = true } }
 vue = "html"
 "*.vue" = "html"
 
-[[language-server.typescript-language-server.config.plugins]]
+[language-server.typescript-language-server.config.plugins]
 name = "@vue/typescript-plugin"
 location = "vue-language-server"
 languages = ["vue"]
