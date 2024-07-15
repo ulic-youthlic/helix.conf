@@ -26,11 +26,11 @@ hidden = false
 left = [
   "mode",
   "file-name",
+  "version-control",
   "file-encoding",
   "separator",
   "file-type",
   "spinner",
-  "version-control",
 ]
 center = ["diagnostics"]
 right = [
