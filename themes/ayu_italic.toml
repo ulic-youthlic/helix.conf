@@ -1,0 +1,19 @@
+inherits = "ayu_evolve"
+
+"keyword" = { fg = "orange", modifiers = ["italic"] }
+"keyword.control" = { fg = "orange", modifiers = ["italic"] }
+"keyword.control.conditional" = { fg = "orange" }
+"keyword.control.repeat" = { fg = "orange", modifiers = ["italic"] }
+"keyword.control.import" = { fg = "orange", modifiers = ["italic"] }
+"keyword.control.return" = { fg = "orange", modifiers = ["italic"] }
+"keyword.function" = { fg = "orange", modifiers = ["italic"] }
+"keyword.directive" = { fg = "yellow", modifiers = ["italic"] }
+"keyword.storage" = { fg = "yellow" }
+"keyword.storage.type" = { fg = "yellow", modifiers = ["italic"] }
+"keyword.storage.modifier" = { fg = "magenta", modifiers = ["italic"] }
+"keyword.storage.modifier.ref" = "magenta"
+"keyword.storage.modifier.mut" = "magenta"
+"special" = { fg = "orange", modifiers = ["italic"] }
+"type.builtin" = "blue"
+"tag" = { fg = "blue", modifiers = ["italic"] }
+"comment" = { fg = "gray", modifiers = ["italic", "bold"] }
