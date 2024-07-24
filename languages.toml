@@ -128,6 +128,7 @@ formatter = { command = "black", args = [
   "--quiet",
   "-",
 ] }
+auto-format = true
 language-servers = ["pyright", "ruff"]
 
 [[language]]
