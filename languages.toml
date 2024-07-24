@@ -22,21 +22,6 @@ auto-format = true
 language-servers = ["markdown-oxide"]
 
 [[language]]
-name = "astro"
-formatter = { command = "prettier", args = ["--parser", "astro"] }
-auto-format = true
-language-servers = ["astro-ls", "vscode-eslint-language-server"]
-
-[[language]]
-name = "svelte"
-auto-format = true
-language-servers = [
-  "svelteserver",
-  "tailwindcss-ls",
-  "vscode-eslint-language-server",
-]
-
-[[language]]
 name = "vue"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "vue"] }
@@ -86,6 +71,7 @@ language-servers = [
 
 [[language]]
 name = "css"
+auto-format = true
 formatter = { command = 'prettier', args = ["--parser", "css"] }
 language-servers = [
   "vscode-css-language-server",
@@ -106,12 +92,6 @@ language-servers = [
 name = "yaml"
 formatter = { command = 'prettier', args = ["--parser", "yaml"] }
 auto-format = true
-
-# create workspace config for connections
-# ref: https://github.com/joe-re/sql-language-server
-[[language]]
-name = "sql"
-language-servers = ["sql-language-server"]
 
 [[language]]
 name = "fish"
@@ -142,7 +122,12 @@ language-servers = ["powershell-editor-services"]
 
 [[language]]
 name = "python"
-formatter = { command = "black", arg = ["--line-length", "88", "--quiet", "-"] }
+formatter = { command = "black", args = [
+  "--line-length",
+  "88",
+  "--quiet",
+  "-",
+] }
 language-servers = ["pyright", "ruff"]
 
 [[language]]
@@ -166,11 +151,6 @@ auto-format = true
 language-servers = ["vscode-html-language-server", "tailwindcss-ls"]
 
 [[language]]
-name = "css"
-auto-format = true
-language-servers = ["vscode-css-language-server", "tailwindcss-ls"]
-
-[[language]]
 name = "jsx"
 auto-format = true
 language-servers = ["typescript-language-server", "tailwindcss-ls"]
@@ -190,7 +170,11 @@ name = "xml"
 auto-format = true
 formatter = { command = "xmllint", args = ["--format", "-"] }
 
-# lsp settings
+# language server configuration
+[language-server]
+rust-analyzer = { config = { check = { command = "clippy" } } }
+texlab = { config = { texlab = { build = { onSave = true } } } }
+vscode-json-language-server = { config = { json = { keepLines = { enable = true } } } }
 
 # yaml
 [language-server.yaml-language-server.config.yaml]
@@ -199,10 +183,6 @@ validation = true
 [language-server.yaml-language-server.config.yaml.schemas]
 "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
 "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
-
-# rust
-[language-server.rust-analyzer.config.check]
-command = "clippy"
 
 # python
 [language-server.pyright.config.python.analysis]
@@ -220,24 +200,6 @@ args = [
   "-Command",
   "D:\\Document\\PowerShell\\Modules\\PowerShellEditorServices\\PowerShellEditorServices\\Start-EditorServices.ps1 -BundledModulesPath D:\\Document\\PowerShell\\Modules\\PowerShellEditorServices -SessionDetailsPath D:\\Document\\PowerShell\\Modules\\PowerShellEditorServices\\PowerShellEditorServices.sessions.json -LogPath D:\\Document\\PowerShell\\Modules\\PowerShellEditorServices\\PowerShellEditorServices.log -FeatureFlags @() -AdditionalModules @() -HostName helix -HostProfileId 0 -HostVersion 1.0.0 -Stdio -LogLevel Normal",
 ]
-
-# latex
-[language-server.texlab.config.texlab.build]
-onSave = true
-
-# sql
-[language-server.sql-language-server]
-command = "sql-language-server"
-args = ["up", "--method", "stdio"]
-
-[language-server.astro-ls]
-command = "astro-ls"
-args = ["--stdio"]
-# config = { typescript = { tsdk = "/Users/user/.bun/install/global/node_modules/typescript/lib" }, environment = "node" } # Add config for typescipt
-
-[language-server.vscode-json-language-server.config]
-# provideFormatter = true
-json = { keepLines = { enable = true } }
 
 [language-server.tailwindcss-ls.config.userLanguages]
 vue = "html"
