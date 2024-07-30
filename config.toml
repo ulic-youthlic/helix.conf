@@ -2,17 +2,46 @@ theme = "ayu_italic"
 
 [editor]
 line-number = "relative"
-shell = ["pwsh", "-cwa"]
 cursorline = true
-gutters = ["diagnostics", "line-numbers", "spacer"]
 cursorcolumn = false
+true-color = true
+undercurl = true
 bufferline = "multiple"
 color-modes = true
-soft-wrap.enable = true
+default-line-ending = "lf"
+popup-border = "all"
+
+[editor.statusline]
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "file-type",
+  "separator",
+  "read-only-indicator",
+  "file-name",
+  "file-modification-indicator",
+  "spacer",
+  "spinner",
+]
+center = ["diagnostics"]
+right = [
+  "register",
+  "file-line-ending",
+  "file-encoding",
+  "separator",
+  "total-line-numbers",
+  "position",
+  "position-percentage",
+]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [editor.lsp]
-display-inlay-hints = true
 display-messages = true
+display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -22,29 +51,9 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[editor.statusline]
-left = [
-  "mode",
-  "file-name",
-  "version-control",
-  "file-encoding",
-  "separator",
-  "file-type",
-  "spinner",
-]
-center = ["diagnostics"]
-right = [
-  "file-line-ending",
-  "separator",
-  "selections",
-  "total-line-numbers",
-  "position",
-  "position-percentage",
-]
-separator = "|"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
 
 [editor.whitespace.render]
 space = "all"
@@ -60,3 +69,16 @@ tabpad = "·"
 
 [editor.indent-guides]
 render = true
+
+[editor.gutters]
+layout = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+line-numbers.min-width = 1
+
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "error"
+prefix-len = 2
